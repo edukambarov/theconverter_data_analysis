@@ -50,7 +50,7 @@ try:
         item['name'] = raw_table_name.text[:-1]
         time.sleep(5)
 
-        # Получаем список заголовкоа таблиц
+        # Получаем список заголовков таблиц
         cols = driver.find_elements(By.XPATH,'//table[contains(@class,"razmery")]//tr[1]/td/span')
         cols = [ele.text for ele in cols]
         cols = [x for x in clean_columns(cols) if not x.startswith(' ')]
